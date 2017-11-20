@@ -1,13 +1,11 @@
 <component name="libraryTable">
   <library name="lib">
     <CLASSES>
-      <root url="file://E:/workAtWeavernorth/environmentLib/lib" />
+      <root url="jar://$PROJECT_DIR$/../环境/commons-logging-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../环境/dom4j-1.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../环境/jdbc.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="file://E:/workAtWeavernorth/environmentLib/lib" />
-    </SOURCES>
-    <jarDirectory url="file://E:/workAtWeavernorth/environmentLib/lib" recursive="false" />
-    <jarDirectory url="file://E:/workAtWeavernorth/environmentLib/lib" recursive="false" type="SOURCES" />
+    <SOURCES />
   </library>
 </component>
