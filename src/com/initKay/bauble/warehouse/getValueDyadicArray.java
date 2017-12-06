@@ -1,4 +1,4 @@
-package bauble.warehouse;
+package com.initKay.bauble.warehouse;
 
 public class getValueDyadicArray {
     /**

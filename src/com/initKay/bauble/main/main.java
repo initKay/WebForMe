@@ -1,6 +1,6 @@
-package bauble.main;
+package com.initKay.bauble.main;
 
-import bauble.warehouse.getValueDyadicArray;
+import com.initKay.bauble.warehouse.getValueDyadicArray;
 
 public class main {
     private static int[][] sample = new int[][] { { 1, 2, 8, 9 },
