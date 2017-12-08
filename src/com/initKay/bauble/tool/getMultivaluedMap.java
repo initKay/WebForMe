@@ -3,10 +3,14 @@ package com.initKay.bauble.tool;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
 /**
- * 关于map的工具类
- * @author initKay
+ * Created with IntelliJ IDEA.
+ * User: initKay
+ * Date: 2017/12/8
+ * Time: 11:51
+ * To change this template use File | Settings | File Templates.
+ * Description:
+ *          *关于map的工具类
  */
 public class getMultivaluedMap {
     /**
