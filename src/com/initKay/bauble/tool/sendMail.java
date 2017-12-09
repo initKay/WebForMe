@@ -3,12 +3,14 @@ package com.initKay.bauble.tool;
 /**
  * 2017 12 06 添加
  * 用于发送邮件的方法类
+ *
  * @author initKay
  * @version 1.0
  */
 public class sendMail {
-    public sendMail(){
+    public sendMail() {
     }
+
     //发送邮箱的地址
     private String username;
     //发送邮箱的密码
@@ -20,8 +22,6 @@ public class sendMail {
 
     private String needSSL;
     private String smtpServerPort;
-
-
 
 
     public String getSmtpServerPort() {

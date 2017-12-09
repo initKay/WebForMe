@@ -3,8 +3,8 @@ package com.initKay.bauble.main;
 import com.initKay.bauble.warehouse.getValueDyadicArray;
 
 public class main {
-    private static int[][] sample = new int[][] { { 1, 2, 8, 9 },
-            { 2, 4, 9, 12 }, { 4, 7, 10, 13 }, { 6, 8, 11, 15 } };
+    private static int[][] sample = new int[][]{{1, 2, 8, 9},
+            {2, 4, 9, 12}, {4, 7, 10, 13}, {6, 8, 11, 15}};
 
     public static void printSample() {
         for (int i = 0; i < sample.length; i++) {
@@ -14,11 +14,12 @@ public class main {
             System.out.println();
         }
     }
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         printSample();
         boolean flag;
-        getValueDyadicArray getValueDyadicArray= new getValueDyadicArray();
-        flag=getValueDyadicArray.getTraget(sample, 4, 4, 7);
+        getValueDyadicArray getValueDyadicArray = new getValueDyadicArray();
+        flag = getValueDyadicArray.getTraget(sample, 4, 4, 7);
         System.out.println(flag);
     }
 }
