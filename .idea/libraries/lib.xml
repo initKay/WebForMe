@@ -4,6 +4,8 @@
       <root url="jar://$PROJECT_DIR$/../环境/commons-logging-1.1.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/../环境/dom4j-1.6.jar!/" />
       <root url="jar://$PROJECT_DIR$/../环境/jdbc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../环境/javamail-1.4.7/mail.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../环境/json-lib-2.2.1-jdk13.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

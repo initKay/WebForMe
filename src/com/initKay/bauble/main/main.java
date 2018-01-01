@@ -1,25 +1,30 @@
 package com.initKay.bauble.main;
 
-import com.initKay.bauble.warehouse.getValueDyadicArray;
+import com.initKay.util.PropServer;
+import com.wgh.tools.ConnDB;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class main {
-    private static int[][] sample = new int[][]{{1, 2, 8, 9},
-            {2, 4, 9, 12}, {4, 7, 10, 13}, {6, 8, 11, 15}};
-
-    public static void printSample() {
-        for (int i = 0; i < sample.length; i++) {
-            for (int j = 0; j < sample[i].length; j++) {
-                System.out.print(sample[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
 
     public static void main(String[] args) {
-        printSample();
-        boolean flag;
-        getValueDyadicArray getValueDyadicArray = new getValueDyadicArray();
-        flag = getValueDyadicArray.getTraget(sample, 4, 4, 7);
-        System.out.println(flag);
+        ConnDB conn=new ConnDB();
+        ResultSet rs;
+        String name="";
+        int id = 0;
+        rs=conn.executeQuery("select * from testtable");
+        try {
+            while (rs.next()){
+               id=conn.getInt("id");
+                name=conn.getString("name");
+                System.out.print("查询结果："+id+","+name);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            conn.close();
+        }
+
     }
 }

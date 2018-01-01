@@ -1,5 +1,8 @@
 package com.initKay.bauble.tool;
 
+import javax.mail.Session;
+import java.util.Properties;
+
 /**
  * 2017 12 06 添加
  * 用于发送邮件的方法类
@@ -23,7 +26,17 @@ public class sendMail {
     private String needSSL;
     private String smtpServerPort;
 
-
+    public boolean sendmail(){
+        boolean flag=true;
+        Properties prop = new Properties();
+        prop.setProperty("mail.host", "smtp.sohu.com");
+        prop.setProperty("mail.transport.protocol", "smtp");
+        prop.setProperty("mail.smtp.auth", "true");
+        //邮件发送的五个步骤
+        //1创建session
+       // Session session = new Session.getInstance(prop);
+        return flag;
+    }
     public String getSmtpServerPort() {
         return smtpServerPort;
     }
