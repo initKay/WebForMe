@@ -17,8 +17,8 @@ import java.util.Properties;
  */
 public class Prop_Read_Write {
     private Properties prop = new Properties();
-    private String ProjectPath=ProjectClassPath.getConfigPath();
-    private String PropPath=ProjectPath+"WEB-INF/prop/";
+    private String ProjectPath=ProjectClassPath.getConfigPath().replace("classes", "prop");
+    private String PropPath=ProjectPath;
 
     /**
      *  读取配置文件的方法
@@ -54,7 +54,7 @@ public class Prop_Read_Write {
             //保存属性到properties文件
             FileOutputStream oFile = new FileOutputStream(PropPath+fielName, false);//true表示追加打开
             prop.setProperty(fieldName, fieldVal);
-            prop.store(oFile, "The New properties file");
+            //prop.store(oFile, "The New properties file");
             oFile.close();
         } catch (Exception e) {
             System.out.println(e);
@@ -75,7 +75,7 @@ public class Prop_Read_Write {
                 //保存属性到properties文件
                 FileOutputStream oFile = new FileOutputStream(PropPath+fielName,true);//true表示追加打开
                 prop.setProperty(fieldName, fieldVal);
-                prop.store(oFile, "The New properties file");
+                //prop.store(oFile, "The New properties file");
                 oFile.close();
             } catch (Exception e) {
                 System.out.println(e);

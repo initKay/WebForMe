@@ -17,10 +17,10 @@ public class ProjectClassPath {
      * @return 项目路径
      */
     public static String getConfigPath() {
-        String spath = "appconfig";
+        String spath = "";
         URL url = Thread.currentThread().getContextClassLoader()
                 .getResource("");
-        String path = url.getPath().replace("classes", spath);
+        String path = url.getPath();//.replace("classes", spath)
         path = path.substring(1);
         System.out.println(path);
         return path;
