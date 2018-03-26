@@ -15,20 +15,19 @@ public class PropServer {
     public PropServer(){}
     private static Properties prop=new Properties();
 
-    public String getPorpMessage(String propPath,String fieldName){
+    public String getPorpMessage(String propPath,String fieldName) throws FileNotFoundException {
         String returnValue="";
-        InputStream in= null;
-        try {
-            in = new FileInputStream(propPath);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        String path="web/WEB-INF/prop/"+propPath;
+        InputStream in = new BufferedInputStream(new FileInputStream(path));
+
         try {
             prop.load(in);
             returnValue=prop.getProperty(fieldName);
+            in.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         return returnValue;
     }
     public void setPropMessage(String propPath,String fieldName,String fieldValue) throws FileNotFoundException {

@@ -53,8 +53,9 @@ public class Prop_Read_Write {
         try {
             //保存属性到properties文件
             FileOutputStream oFile = new FileOutputStream(PropPath+fielName, false);//true表示追加打开
+            System.out.print(PropPath+fielName);
             prop.setProperty(fieldName, fieldVal);
-            //prop.store(oFile, "The New properties file");
+//            prop.store(oFile, "The New properties file");
             oFile.close();
         } catch (Exception e) {
             System.out.println(e);
@@ -74,8 +75,9 @@ public class Prop_Read_Write {
             try {
                 //保存属性到properties文件
                 FileOutputStream oFile = new FileOutputStream(PropPath+fielName,true);//true表示追加打开
+                System.out.print(PropPath+fielName);
                 prop.setProperty(fieldName, fieldVal);
-                //prop.store(oFile, "The New properties file");
+                prop.store(oFile, "The New properties file");
                 oFile.close();
             } catch (Exception e) {
                 System.out.println(e);

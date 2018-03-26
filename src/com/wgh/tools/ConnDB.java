@@ -1,5 +1,8 @@
 package com.wgh.tools;
 
+import com.initKay.util.PropServer;
+
+import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.sql.*;
 import java.sql.Connection;
@@ -10,12 +13,18 @@ public class ConnDB {
     public Connection conn = null;//声明connection实例
     public Statement stmt = null;//声明Statement实例
     public ResultSet rs = null;
-    private static String proFileName = "connDB.properites";//指定资源文件保存位置
+    private static String proFileName = "connDB.properties";//指定资源文件保存位置
     private static Properties prop = new Properties();
     private static String dbClassName = "com.mysql.jdbc.Driver";
     private static String dbUrl = "jdbc:mysql://localhost:33060/testdb?user=root&password=123456&useUnicode=true";
 
     public ConnDB() {
+        PropServer propServer=new PropServer();
+        try {
+            propServer.getPorpMessage(proFileName,"DB_CLASS_NAME");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 //        try{
 //            InputStream in=getClass().getResourceAsStream(proFileName);
 //            prop.load(in);                                              //通过输入流对象加载Properties文件
@@ -46,23 +55,22 @@ public class ConnDB {
         return conn;                                                    //返回数据库对象
     }
 
-    public ResultSet execute(String sql) {
-        conn = getConnection();
+    public boolean execute(String sql) {
+        boolean flag = true;
+        conn = getConnection();                                       //调用数据库连接方法构造Connection对象的一个实例
         try {
-
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            stmt.execute(sql);
+            flag=stmt.execute(sql);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return rs;
+        return flag;
     }
 
     /**
      * 执行查询语句的方法
-     *
-     * @param sql
-     * @return
+     * @param sql 查询sql
+     * @return 返回结果集
      */
     public ResultSet executeQuery(String sql) {
         try {
@@ -72,7 +80,6 @@ public class ConnDB {
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
-
         return rs;
     }
 
